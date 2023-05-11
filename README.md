@@ -22,7 +22,7 @@ npm run dev
 
 **接下来访问`http://127.0.0.1:5173/`地址可以看到项目已经启动成功。**
 
-![Alt text](../%E5%9B%BE%E7%89%87/image-20230510172801495.png)
+![Alt text](img/image-20230510172801495.png)
 
 **接下来我们安装`electron`，使用以下命令（注意，我们这里使用 `-D` 来安装开发依赖，之后所使用到的包均为开发依赖，不再过多赘述。：**
 
@@ -139,7 +139,7 @@ npm run dev
 npm run electron:dev
 ```
 
-![Alt text](../%E5%9B%BE%E7%89%87/image-20230510201153201.png)
+![Alt text](img/image-20230510201153201.png)
 
 **至此，一个简单的`electron+vue3+ts+vite`应用就创建完成了。**
 
@@ -174,7 +174,7 @@ if (process.env.NODE_ENV === "development") {
 
 **这段代码中我们希望通过判断开发环境来加载不同的服务或文件，并判断是否要自动打开开发者工具，但是当我们重新启动项目时会发现页面为空白，也不能自动打开开发者工具，并且出现了以下错误：**
 
-![Alt text](../%E5%9B%BE%E7%89%87/image-20230510212920208.png)
+![Alt text](img/image-20230510212920208.png)
 
 **很明显，`process.env.NODE_ENV`并不等于`development`，因此页面会去加载同一层级的`index.html`，这是因为我们在运行命令时并没有把`NODE_ENV`加进来，但由于跨平台，直接在命令前添加`NODE_ENV=development`会报错，因此我们需要使用`cross-env`这个工具来解决。**
 
@@ -199,7 +199,7 @@ npm i -D cross-env
 
 **修改完之后，我们再次运行`npm run electron:dev`命令，发现页面可以正常加载，并且自动打开开发者工具。 **
 
-![Alt text](../%E5%9B%BE%E7%89%87/image-20230510214217808.png)
+![Alt text](img/image-20230510214217808.png)
 
 ------
 
@@ -232,7 +232,7 @@ npm i -D concurrently wait-on
 
 **修改好之后，再去运行`npm run electron:dev`命令，就可以一键启动`electron`项目了**
 
-![Alt text](../%E5%9B%BE%E7%89%87/image-20230510220351695.png)
+![Alt text](img/image-20230510220351695.png)
 
 **至此结束。**
 
